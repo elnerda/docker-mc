@@ -1,0 +1,33 @@
+version: '3'
+# Other docker-compose examples in /examples
+
+services:
+  minecraft:
+    image: itzg/minecraft-server
+    ports:
+      - "25565:25565"
+    volumes:
+      - "mc:/data"
+    environment:
+      EULA: "TRUE"
+      PVP: "false"
+      ALLOW_NETHER: "true"
+      ALLOW_END: "true"
+      SPAWN_ANIMALS: "true"
+      SPAWN_MONSTERS: "true"
+      MODE: "survival"
+      HARDCORE: "true"
+      MAX_PLAYERS: "15"
+      SNOOPER_ENABLED: "false"
+      WHITELIST: ""
+      GENERATE_STRUCTURES: "true"
+      SPAWN_NPCS: "true"
+      SYNC_CHUNK_WRITES: "true"
+      ENABLE_ROLLING_LOGS: "true"
+      TZ: "Europe/Berlin"
+      
+
+    restart: always
+
+volumes:
+  mc: {}
